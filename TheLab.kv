@@ -1,0 +1,44 @@
+BoxLayoutExample:
+
+<BoxLayoutExample>
+    orientation: "vertical" #comment: or "horizontal"
+    Button:
+        text:"A" #comment :to use actual position set size_hint: none , none
+        size_hint: 0.5,0.5
+    Button:
+        text:"B"
+        size_hint: 0.5,None
+        width: "100dp"
+
+        pos_hint: {'center_x':0.75} # eq val to push on the right according to size_hint
+
+        #NOTE :  pos_hint: {'x'/'center_x'/'right': percentage point } for vertical !
+        #NOTE :  pos_hint: {'y'/'center_y'/'top': percentage point } for horizontal
+    BoxLayout:
+        orientation: "horizontal"
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                text:"I"
+            Button:
+                text:"J"
+        Button:
+            text: "F"
+        Button:
+            text: "G"
+
+#MainWidget:
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "80dp" #comment: dp = density independent pixel !
+        pos: "100dp" , "200dp"
+    Button: #comment:  this button will on top if pos is same !!
+        text: "Hello2"
+        size: "100dp", "80dp"
+        pos: "200dp" , "200dp"
+    Label:
+        text: "Heading"
+        # size: "300dp","300dp"  #comment: invisible boarding surrounding !
+        pos: "300dp" , "300dp"
