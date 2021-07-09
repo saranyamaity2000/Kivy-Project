@@ -1,6 +1,56 @@
-BoxLayoutExample:
+StackLayoutExample:   # the name that you write here will be shown as main interface !
 
-<BoxLayoutExample>
+<StackLayoutExample>:
+    # this time we will be using only function at first
+    # we will be trying to use loop for 10 buttons !
+
+# NOTE : " NameLayoutExample: " is a reference to the example program
+# you have defined , so be sure to use the benefit wisely.
+# some example is shown in Gridlayout with the help of box layout !
+
+<GridLayoutExample>: # defining the example !
+    # main properties here is cols and rows !
+    cols: 2
+    Button:
+        text:"A"
+    Button:
+        text:"B"
+    Button:
+        text:"C"
+        #size_hint: 0.2,0.2
+    BoxLayoutExample: #in the place of button D
+    Button:
+        text:"E"
+        size_hint: 1, None
+        width:"10dp"
+
+    Button:
+        text:"F"
+        size_hint: 1, None
+        width:"10dp"
+
+
+<AnchorLayoutExample>:
+    # here new properties are introduced !
+    # < anchor_x = right left center
+    # < anchor_y = top bottom center
+    anchor_x:"center"
+    anchor_y:"top"
+
+    # i can now use as many buttons only inside it mentionsing their sizes but they will
+    # be over lapped ! so better use other LAYOUT to create MULTI buttons
+    # and position the other layout section with help of Achorlayout
+    BoxLayout:
+        size_hint: .2, .2
+        Button:
+            text: "A"
+            #size_hint: .1 , .1 optional .1 respect to .2 of the whole anchor layout !
+        Button:
+            text: "B"
+
+
+
+<BoxLayoutExample>:
     orientation: "vertical" #comment: or "horizontal"
     Button:
         text:"A" #comment :to use actual position set size_hint: none , none
@@ -14,7 +64,7 @@ BoxLayoutExample:
 
         #NOTE :  pos_hint: {'x'/'center_x'/'right': percentage point } for vertical !
         #NOTE :  pos_hint: {'y'/'center_y'/'top': percentage point } for horizontal
-    BoxLayout:
+    BoxLayout: #can be called as embedded layout
         orientation: "horizontal"
         BoxLayout:
             orientation: "vertical"
